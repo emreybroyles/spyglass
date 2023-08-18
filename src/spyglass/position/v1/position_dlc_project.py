@@ -481,6 +481,14 @@ class DLCProject(dj.Manual):
         if not isinstance(video_filenames, List):
             video_filenames = [video_filenames]
         for video_file in video_filenames:
+            image_files = Path(import_labeled_data_path, video_file).glob(
+                "*.png"
+            )
+            for image_file in image_files:
+                shutil.copy2(
+                    image_file,
+                    Path(current_labeled_data_path, video_file),
+                )
             h5_file = glob.glob(
                 f"{import_labeled_data_path.as_posix()}/{video_file}/*.h5"
             )[0]
