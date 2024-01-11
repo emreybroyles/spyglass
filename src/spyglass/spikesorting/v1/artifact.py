@@ -156,7 +156,6 @@ class ArtifactDetection(SpyglassMixin, dj.Computed):
                 ).fetch1("nwb_file_name"),
                 interval_list_name=str(key["artifact_id"]),
                 valid_times=artifact_removed_valid_times,
-                pipeline="spikesorting_artifact_v1",
             ),
             skip_duplicates=True,
         )

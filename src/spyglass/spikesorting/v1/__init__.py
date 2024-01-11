@@ -19,3 +19,4 @@ from .recording import (
     SpikeSortingRecordingSelection,
 )
 from .sorting import SpikeSorterParameters, SpikeSorting, SpikeSortingSelection
+from .utils import get_spiking_sorting_v1_merge_ids
